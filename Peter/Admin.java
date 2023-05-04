@@ -10,5 +10,8 @@ public class Admin {
     private Customer customers = new Customer();
     private Car cars = new Car();
     private TransactionManagement transactionManagement = new TransactionManagement();
+    public Admin (){
+        
+    }
 
 }
