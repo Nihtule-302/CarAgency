@@ -7,9 +7,9 @@ public class Employee extends Identification {
     private static Employee[] employees = new Employee[5];
     private double payCheck = 1000;
 
-    Employee(){
+    public Employee(){
     }
-    Employee(String name){
+    public Employee(String name){
         idCounter++;
         setId(idCounter);
 
