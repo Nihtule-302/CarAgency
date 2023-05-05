@@ -1,8 +1,11 @@
 package Saif;
 
+import Peter.Admin;
+
 public class Identification {
     private String name;
     private int id;
+    public Admin manager = new Admin();
 
     // Void constructor
     public Identification() {}

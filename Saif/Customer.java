@@ -1,7 +1,6 @@
 package Saif;
 
 public class Customer extends Identification {
-    private Admin manager = new Admin();
     private static int idCounter = 0;
 
     // No-arg constructor

@@ -1,7 +1,6 @@
 package Saif;
 
 public class Car extends Identification {
-    private Admin manager = new Admin();
     private static int idCounter = 0;
     private double price;
     private double rent;

@@ -4,7 +4,6 @@ import Peter.Admin;
 import Saif.Identification;
 
 public class Employee extends Identification {
-    private Admin manager = new Admin();
     private static int idCounter = 0;
     private double payCheck = 1000;
 
