@@ -15,16 +15,6 @@ public class Customer extends Identification {
         setId(idCounter);
     }
 
-    // Getter for manager
-    public Admin getManager() {
-        return manager;
-    }
-
-    // Setter for manager
-    public void setManager(Admin manager) {
-        this.manager = manager;
-    }
-
     // Getter for idCounter
     public static int getIdCounter() {
         return idCounter;
