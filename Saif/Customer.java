@@ -1,14 +1,11 @@
 package Saif;
 
 public class Customer extends Identification {
-    private Admin manager;
+    private Admin manager = new Admin();
     private static int idCounter = 0;
 
     // No-arg constructor
     public Customer() {
-        super();
-        idCounter++;
-        setId(idCounter);
     }
 
     // Constructor with name parameter

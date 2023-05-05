@@ -50,10 +50,5 @@ public class Transaction extends TransactionManagement {
         System.arraycopy(getTransactions(), 0, temp, 0, getTransactions().length);
         setTransactions(temp);
     }
-
-    // added by Saif becuase i think it needs to be added for the getCarByModel() to work
-    public Car getCar() {
-        return car;
-    }
 }
 
