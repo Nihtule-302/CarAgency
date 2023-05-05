@@ -16,10 +16,5 @@ public class Car extends Identification {
         this.price = price;
         this.rent = rent;
         idCounter++;
-    }
-
-    // Getter for idCounter
-    public static int getIdCounter() {
-        return idCounter;
-    }    
+    }   
 }
