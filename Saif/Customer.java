@@ -15,8 +15,5 @@ public class Customer extends Identification {
         setId(idCounter);
     }
 
-    // Getter for idCounter
-    public static int getIdCounter() {
-        return idCounter;
-    }
+
 }
