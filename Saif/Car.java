@@ -39,12 +39,17 @@ public class Car extends Identification {
         return idCounter;
     }
 
-    // Method to get a Car by model still not complete
-    public static Car getCar(???) {
-        //???
-        //???
-        //???
+    // Method to get a Car by model
+    public Car getCarByModel(String model) {
+        Transaction[] transactions = getTransactions();
+        for (Transaction transaction : transactions) {
+            if (transaction.getCar() != null && transaction.getCar().getName().equals(model)) {
+                return transaction.getCar();
+            }
+        }
+        return null; // No car with matching model was found
     }
+    
 
     // Setter for price
     public void setPrice(double price) {

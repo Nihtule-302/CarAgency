@@ -51,5 +51,9 @@ public class Transaction extends TransactionManagement {
         setTransactions(temp);
     }
 
+    // added by Saif becuase i think it needs to be added for the getCarByModel() to work
+    public Car getCar() {
+        return car;
+    }
 }
 
