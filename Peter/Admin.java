@@ -22,8 +22,8 @@ public class Admin {
         private Car[] defaultCars() {
             Car[] cars = new Car[2];
             cars[0] = new Car("BMW");
-            cars[1] = new Car("MERCEDES");
-           
+            cars[1] = new Car("MERCEDES",2000,);
+
             return cars;
         }
     }
