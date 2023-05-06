@@ -9,8 +9,6 @@ public class Admin {
     private Employee[] employees = defaultEmployees();
     private Customer[] customers = new Customer[3];
     private Car[] cars = defaultCars();
-
-
     private TransactionManagement transactionManagement = new TransactionManagement();
     private Employee[] defaultEmployees() {
         Employee[] employees = new Employee[3];
@@ -21,10 +19,9 @@ public class Admin {
     }
         private Car[] defaultCars() {
             Car[] cars = new Car[2];
-            cars[0] = new Car("BMW");
-            cars[1] = new Car("MERCEDES",2000,);
-
+            cars[0] = new Car("BMW",1232000,1755 );
+            cars[1] = new Car("MERCEDES",1848000,2156);
             return cars;
         }
     }
-}
+
