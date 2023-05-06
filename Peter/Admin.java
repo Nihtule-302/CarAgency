@@ -49,19 +49,28 @@ public class Admin {
         System.arraycopy(cars, 0, temp, 0, cars.length);
         cars = temp;
     }
-
     private int findAvailableIndex(Object[] arr) {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == null) {
                 return i;
             }
-
-            if (arr instanceof Employee[]) {
-                resizeEmployee();
-                return arr.length - 1;
-            }
         }
+
+        if (arr instanceof Employee[]) {
+            resizeEmployee();
+            return arr.length;
+        } else if (arr instanceof Car[]) {
+            resizeCar();
+            return arr.length;
+        } else if (arr instanceof Customer[]) {
+            resizeCustomer();
+            return arr.length;
+        }
+
+        return -1;
     }
+
+
 }
 
 
