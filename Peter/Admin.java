@@ -25,22 +25,30 @@ public class Admin {
             cars[1] = new Car("MERCEDES",1848000,2156);
             return cars;
         }
-    private void resizeEmployeeArray(int newSize) {
-        Employee[] temp = new Employee[newSize];
-        System.arraycopy(employees, 0, temp, 0, newSize);
+    private void resizeEmployee() {
+        int increaseBy = 5;
+        Employee[] temp = new Employee[employees.length + increaseBy];
+        System.arraycopy(employees, 0, temp, 0, employees.length);
         employees = temp;
     }
 
-    private void resizeCustomerArray(int newSize) {
-        Customer[] temp = new Customer[newSize];
-        System.arraycopy(customers, 0, temp, 0, newSize);
+
+    private void resizeCustomer() {
+        int increaseBy = 5;
+        Customer[] temp = new Customer[customers.length + increaseBy];
+        System.arraycopy(customers, 0, temp, 0, customers.length);
         customers = temp;
     }
 
-    private void resizeCarArray(int newSize) {
-        Car[] temp = new Car[newSize];
-        System.arraycopy(cars, 0, temp, 0, newSize);
+    private void resizeCar() {
+        int increaseBy = 5;
+        Car[] temp = new Car[cars.length + increaseBy];
+        System.arraycopy(cars, 0, temp, 0, cars.length);
         cars = temp;
     }
-    }
+
+
+
+
+}
 
