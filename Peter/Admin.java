@@ -58,16 +58,13 @@ public class Admin {
 
         if (arr instanceof Employee[]) {
             resizeEmployee();
-            return arr.length;
         } else if (arr instanceof Car[]) {
             resizeCar();
-            return arr.length;
         } else if (arr instanceof Customer[]) {
             resizeCustomer();
-            return arr.length;
         }
 
-        return -1;
+        return arr.length-1;
     }
 
 
