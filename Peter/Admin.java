@@ -64,8 +64,80 @@ public class Admin {
             resizeCustomer();
         }
 
-        return arr.length-1;
+        return findAvailableIndex(Object[] arr);
     }
+    public void addEmployee(String name) {
+        Employee newEmployee = new Employee(name);
+        int index = findAvailableIndex(employees);
+
+        employees[index] = newEmployee;
+    }
+    public void addCustomer(String name) {
+        Customer newCustomer = new Customer(name);
+        int index = findAvailableIndex(customers);
+
+        customers[index] = newCustomer;
+    }
+
+    public void addCar(String model, int price, int rent) {
+        Car newCar = new Car(model, price, rent);
+        int index = findAvailableIndex(cars);
+
+        cars[index] = newCar;
+    }
+    public void removeEmployee(String name) {
+        for (int i = 0; i < employees.length; i++) {
+            if (employees[i] != null && employees[i].getName().equals(name)) {
+                employees[i] = null;
+                break;
+            }
+        }
+    }
+    public void removeCustomer(String name) {
+        for (int i = 0; i < customers.length; i++) {
+            if (customers[i] != null && customers[i].getName().equals(name)) {
+                customers[i] = null;
+                break;
+            }
+        }
+    }
+    public Car getCar(int id) {
+        for (Car car : cars) {
+            if (car != null && car.getId() == id) {
+                return car;
+            }
+        }
+        return null;
+    }
+    public Car[] getCars() {
+        return cars;
+    }
+    public Employee getEmployee(String name) {
+        for (Employee employee : employees) {
+            if (employee != null && employee.getName().equals(name)) {
+                return employee;
+            }
+        }
+        return null;
+    }
+
+    public Employee getEmployee(int id) {
+        for (Employee employee : employees) {
+            if (employee != null && employee.getId() == id) {
+                return employee;
+            }
+        }
+        return null;
+    }
+
+    public Employee[] getEmployees() {
+        return employees;
+    }
+
+
+
+
+
 
 
 }
