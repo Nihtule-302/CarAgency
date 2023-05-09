@@ -103,7 +103,7 @@ public class Admin {
     }
     public Car getCar(String model) {
         for (Car car : cars) {
-            if (car != null && car.getName() == model) {
+            if (car != null && car.getName().equals(model)) {
                 return car;
             }
         }
