@@ -141,6 +141,27 @@ public class Admin {
     public Employee[] getEmployees() {
         return employees;
     }
+    public Customer getCustomer(String name) {
+        for (Customer customer : customers) {
+            if (customer != null && customer.getName().equals(name)) {
+                return customer;
+            }
+        }
+        return null;
+    }
+
+    public Customer getCustomer(int id) {
+        for (Customer customer : customers) {
+            if (customer != null && customer.getId() == id) {
+                return customer;
+            }
+        }
+        return null;
+    }
+
+    public Customer[] getCustomers() {
+        return customers;
+    }
 
 
 
