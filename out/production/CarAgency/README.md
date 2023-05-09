@@ -1,2 +1,0 @@
-# CarAgency
-OOP Assignment
