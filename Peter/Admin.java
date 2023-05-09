@@ -101,6 +101,14 @@ public class Admin {
             }
         }
     }
+    public Car getCar(String model) {
+        for (Car car : cars) {
+            if (car != null && car.getName() == model) {
+                return car;
+            }
+        }
+        return null;
+    }
     public Car getCar(int id) {
         for (Car car : cars) {
             if (car != null && car.getId() == id) {
