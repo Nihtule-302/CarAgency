@@ -13,7 +13,7 @@ public class Employee extends Identification {
         idCounter++;
         setName(name);
         setId(idCounter);
-        manager.addEmployee();
+        manager.addEmployee(name);
     }
 
     public void increasePayCheck(double money){

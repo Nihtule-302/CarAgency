@@ -64,7 +64,7 @@ public class Admin {
             resizeCustomer();
         }
 
-        return findAvailableIndex(Object[] arr);
+        return findAvailableIndex(arr);
     }
     public void addEmployee(String name) {
         Employee newEmployee = new Employee(name);
@@ -79,7 +79,7 @@ public class Admin {
         customers[index] = newCustomer;
     }
 
-    public void addCar(String model, int price, int rent) {
+    public void addCar(String model, double price, double rent) {
         Car newCar = new Car(model, price, rent);
         int index = findAvailableIndex(cars);
 
