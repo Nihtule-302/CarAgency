@@ -45,7 +45,7 @@ public class Transaction extends TransactionManagement {
         //if the array is full, resize array
         //and return the last index
         resizeArray();
-        return transactions.length -1;
+        return findAvailableIndex();
 
     }
 
