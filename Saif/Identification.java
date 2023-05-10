@@ -21,7 +21,7 @@ public class Identification {
     }
 
     // Getter for name
-    public String getName() {
+    public static String getName() {
         return name;
     }
 

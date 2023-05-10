@@ -18,7 +18,7 @@ public class Car extends Identification {
     }
 
     // Getter for Price
-    public double getPrice() {
+    public static double getPrice() {
         return price;
     }
 
