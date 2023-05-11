@@ -101,6 +101,14 @@ public class Admin {
             }
         }
     }
+    public void removeCar(String model) {
+        for (int i = 0; i < cars.length; i++) {
+            if (cars[i] != null && cars[i].getName().equals(model)) {
+                cars[i] = null;
+                break;
+            }
+        }
+    }
     public Car getCar(String model) {
         for (Car car : cars) {
             if (car != null && car.getName().equals(model)) {
