@@ -126,7 +126,7 @@ public class Admin {
     public Car[] getCars() {
         return cars;
     }
-    public Employee getEmployee(String name) {
+    public Employee getEmployee(String name) throws IllegalArgumentException {
         for (Employee employee : employees) {
             if (employee != null && employee.getName().equals(name)) {
                 return employee;
