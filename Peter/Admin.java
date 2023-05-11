@@ -1,17 +1,15 @@
 package Peter;
 
 import Ali.Employee;
-import Ali.TransactionManagement;
+import Ali.Transaction;
 import Saif.Car;
 import Saif.Customer;
-
-import java.util.Arrays;
 
 public class Admin {
     private Employee[] employees = defaultEmployees();
     private Customer[] customers = new Customer[3];
     private Car[] cars = defaultCars();
-    private TransactionManagement transactionManagement = new TransactionManagement();
+    private Transaction transaction = new Transaction();
 
     private Employee[] defaultEmployees() {
         Employee[] employees = new Employee[3];
@@ -64,7 +62,7 @@ public class Admin {
             resizeCustomer();
         }
 
-        return findAvailableIndex(Object[] arr);
+        return findAvailableIndex(arr);
     }
     public void addEmployee(String name) {
         Employee newEmployee = new Employee(name);
@@ -79,7 +77,7 @@ public class Admin {
         customers[index] = newCustomer;
     }
 
-    public void addCar(String model, int price, int rent) {
+    public void addCar(String model, double price, double rent) {
         Car newCar = new Car(model, price, rent);
         int index = findAvailableIndex(cars);
 

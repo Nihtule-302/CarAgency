@@ -1,6 +1,8 @@
 package Ali;
 
 import Peter.Admin;
+import Saif.Car;
+import Saif.Customer;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -58,24 +60,60 @@ public class Management {
     }
 
     private void employeeManagement() throws InputMismatchException {
+        String employeeName;
+        Employee employee;
         while (true) {
+            Employee[] employees = manager.getEmployees();
             System.out.println("\n++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
             System.out.println("              (Employee)            ");
-            System.out.println("|(1)Hire | (2)Fire | (3)return to previous page");
+            System.out.println("|(1)Hire | (2)Fire | (3)Search | (4)Show All Employees | (5)return to previous page |");
             System.out.print("Choose from the list above the part of the system to access: ");
             boolean flag = true;
             while (flag) {
                 int choice = input.nextInt();
                 switch (choice) {
                     case 1:
-                        System.out.print("Hired\n");
+                        System.out.print("Who do you wish to HIRE (enter a name): ");
+                        employeeName = input.next();
+                        manager.addEmployee(employeeName);
+                        System.out.print(employeeName + " is hired");
                         flag = false;
                         break;
                     case 2:
-                        System.out.print("Fired\n");
+                        System.out.print("Who do you wish to FIRE!!! (enter a name): ");
+                        employeeName = input.next();
+                        manager.removeEmployee(employeeName);
+                        System.out.print(employeeName + " is fired");
                         flag = false;
                         break;
                     case 3:
+                        try {
+                            System.out.print("Who do you wish to Find (enter a name): ");
+                            employeeName = input.next();
+                            employee = manager.getEmployee(employeeName);
+                            System.out.println("Name: " + employee.getName());
+                            System.out.println("ID: " + employee.getId());
+                            flag = false;
+                            break;
+                        }catch (IllegalArgumentException iae){
+                            System.out.println("Employee not found");
+                            flag = false;
+                            break;
+                        }
+                    case 4:
+                        System.out.print("Name| ");
+                        for (int i = 0; i < employees.length; i++) {
+                            if (employees[i] != null)
+                                System.out.print(employees[i].getName() + " ");
+                        }
+                        System.out.print("\nID| ");
+                        for (int i = 0; i < employees.length; i++) {
+                            if (employees[i] != null)
+                                System.out.print(employees[i].getId() + " ");
+                        }
+                        flag = false;
+                        break;
+                    case 5:
                         System.out.println("\n++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
                         System.out.println("               (Root)                ");
                         return;
@@ -86,24 +124,48 @@ public class Management {
         }
     }
     private void customerManagement() throws InputMismatchException {
+        String customerName;
+        Customer customer;
         while (true) {
+            Customer[] customers = manager.getCustomers();
             System.out.println("\n++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
             System.out.println("              (Customer)            ");
-            System.out.println("|(1)Add | (2)Search | (3)return to previous page");
+            System.out.println("|(1)Add | (2)Search | (3)Show All Customers | (4)return to previous page");
             System.out.print("Choose from the list above the part of the system to access: ");
             boolean flag = true;
             while (flag) {
                 int choice = input.nextInt();
                 switch (choice) {
                     case 1:
-                        System.out.print("Added\n");
+                        System.out.print("Enter the Customer's name: ");
+                        customerName = input.next();
+                        manager.addCustomer(customerName);
+                        System.out.print(customerName + " Added");
                         flag = false;
                         break;
                     case 2:
-                        System.out.print("Searched\n");
-                        flag = false;
-                        break;
+                        try{
+                            System.out.print("Enter the Customer's name: ");
+                            customerName = input.next();
+                            customer = manager.getCustomer(customerName);
+                            System.out.println("Name: " + customer.getName());
+                            System.out.println("ID: " + customer.getId());
+                            flag = false;
+                            break;
+                        }catch (IllegalArgumentException iae){
+                            System.out.println("Customer not found");
+                            flag = false;
+                            break;
+                        }
                     case 3:
+                        System.out.print("Name | ID ");
+                        for (int i = 0; i < customers.length; i++) {
+                            if (customers[i] != null)
+                                System.out.println(customers[i].getName() + " " + customers[i].getId());
+                            flag = false;
+                            break;
+                        }
+                    case 4:
                         System.out.println("\n++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
                         System.out.println("               (Root)                ");
                         return;
@@ -114,24 +176,64 @@ public class Management {
         }
     }
     private void carManagement() throws InputMismatchException {
+        String model;
+        double price, rent;
+        Car car;
         while (true) {
+            Car[] cars = manager.getCars();
             System.out.println("\n++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
             System.out.println("              (Car)            ");
-            System.out.println("|(1)Hire | (2)Fire | (3)return to previous page");
+            System.out.println("|(1)Add | (2)Remove | (3)Search | (4)Show All Cars | (5)return to previous page |");
             System.out.print("Choose from the list above the part of the system to access: ");
             boolean flag = true;
             while (flag) {
                 int choice = input.nextInt();
                 switch (choice) {
                     case 1:
-                        System.out.print("Hired\n");
+                        System.out.print("Enter the model of the car: ");
+                        model = input.next();
+                        System.out.print("Price: ");
+                        price = input.nextDouble();
+                        System.out.print("rent: ");
+                        rent = input.nextDouble();
+
+                        manager.addCar(model, price, rent);
+                        System.out.print(model + " Added");
                         flag = false;
                         break;
                     case 2:
-                        System.out.print("Fired\n");
+                        System.out.print("Which car do you want to remove: ");
+                        model = input.next();
+                        manager.removeCar(model);
+                        System.out.print(model + " Removed");
                         flag = false;
                         break;
                     case 3:
+                        try {
+                            System.out.print("Enter the Car's model: ");
+                            model = input.next();
+                            car = manager.getCar(model);
+                            System.out.println("Name: " + car.getName());
+                            System.out.println("ID: " + car.getId());
+                            System.out.println("price: " + car.getPrice());
+                            System.out.println("rent: " + car.getRent());
+                            flag = false;
+                            break;
+                        }catch (IllegalArgumentException iae){
+                            System.out.println("Car not found");
+                            flag = false;
+                            break;
+                        }
+                    case 4:
+                        System.out.print("Name | ID | Price | rent");
+                        for (int i = 0; i < cars.length; i++) {
+                            if (cars[i] != null)
+                                System.out.println(cars[i].getName() + " " + cars[i].getId() +
+                                                 " " + cars[i].getPrice() + " " + cars[i].getRent() + " ");
+                        }
+                        flag = false;
+                        break;
+                    case 5:
                         System.out.println("\n++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
                         System.out.println("               (Root)                ");
                         return;
@@ -143,16 +245,19 @@ public class Management {
     }
     private void transactionManagement() throws InputMismatchException {
         while (true) {
+            Transaction transaction = new Transaction();
             System.out.println("\n++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
             System.out.println("            (transactionManagement)            ");
-            System.out.println("|(1)Hire | (2)Fire | (3)return to previous page");
+            System.out.println("|(1)Balance | (2)Show All Transactions | (3)return to previous page");
             System.out.print("Choose from the list above the part of the system to access: ");
             boolean flag = true;
             while (flag) {
                 int choice = input.nextInt();
                 switch (choice) {
                     case 1:
-                        System.out.print("Hired\n");
+                        System.out.println("ConfirmedIncome: " + transaction.getConfirmedIncome());
+                        System.out.println("AnticipatedIncome: " + transaction.getAnticipatedIncome());
+                        System.out.println("TotalIncome: " + transaction.getTotalIncome());
                         flag = false;
                         break;
                     case 2:
