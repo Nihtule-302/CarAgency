@@ -4,7 +4,12 @@ import Peter.Admin;
 import Saif.Car;
 import Saif.Customer;
 
-public class Transaction extends TransactionManagement {
+public class Transaction {
+    private static double confirmedIncome = 0;
+    private static double anticipatedIncome = 0;
+    private static double TotalIncome = confirmedIncome + anticipatedIncome;
+    private static Transaction[] transactions = new Transaction[5];
+
     private Employee employee;
     private Customer customer;
     private Car car;
@@ -21,6 +26,11 @@ public class Transaction extends TransactionManagement {
         this.car = car;
         employee.increasePayCheck(1000);
         manager.removeCar(car.getName());
+        if (cashOrInstallments.equals("Cash"))
+            confirmedIncome += car.getPrice();
+        else if (cashOrInstallments.equals("Installments"))
+            confirmedIncome += car.getPrice()/12;
+            anticipatedIncome += (double) (11/12)* car.getPrice();
     }
 
     public void rent(Car car){
@@ -28,6 +38,7 @@ public class Transaction extends TransactionManagement {
         this.car = car;
         employee.increasePayCheck(100);
         manager.removeCar(car.getName());
+        confirmedIncome += car.getRent();
     }
 
     public void saveTransaction(){
@@ -50,9 +61,29 @@ public class Transaction extends TransactionManagement {
     }
 
     private void resizeArray(){
+
         Transaction[] temp = new Transaction[getTransactions().length + 1];
         System.arraycopy(getTransactions(), 0, temp, 0, getTransactions().length);
         setTransactions(temp);
     }
-}
 
+    public double getConfirmedIncome() {
+        return confirmedIncome;
+    }
+
+    public double getAnticipatedIncome() {
+        return anticipatedIncome;
+    }
+
+    public double getTotalIncome() {
+        return TotalIncome;
+    }
+
+    public Transaction[] getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(Transaction[] transactions) {
+        Transaction.transactions = transactions;
+    }
+}

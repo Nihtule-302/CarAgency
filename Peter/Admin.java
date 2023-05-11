@@ -1,17 +1,15 @@
 package Peter;
 
 import Ali.Employee;
-import Ali.TransactionManagement;
+import Ali.Transaction;
 import Saif.Car;
 import Saif.Customer;
-
-import java.util.Arrays;
 
 public class Admin {
     private Employee[] employees = defaultEmployees();
     private Customer[] customers = new Customer[3];
     private Car[] cars = defaultCars();
-    private TransactionManagement transactionManagement = new TransactionManagement();
+    private Transaction transaction = new Transaction();
 
     private Employee[] defaultEmployees() {
         Employee[] employees = new Employee[3];
