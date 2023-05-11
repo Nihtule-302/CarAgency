@@ -8,7 +8,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Management {
-    private Admin manager = new Admin();
+    private static Admin manager = new Admin();
 
     Scanner input = new Scanner(System.in);
 

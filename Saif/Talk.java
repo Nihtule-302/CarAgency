@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Talk {
     private Customer cust = new Customer();
     private Car op = new Car();
-    private Admin manager = new Admin();
+    private static Admin manager = new Admin();
     Scanner input = new Scanner(System.in);
     private String decision;
     private String paymentType;
