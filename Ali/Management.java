@@ -158,11 +158,11 @@ public class Management {
                             break;
                         }
                     case 3:
-                        System.out.print("Name | ID ");
+                        System.out.println("Name | ID ");
                         if (customers.length > 0) {
                             for (int i = 0; i < customers.length; i++) {
                                 if (customers[i] != null)
-                                    System.out.println(customers[i].getName() + " " + customers[i].getId());
+                                    System.out.println(customers[i].getName() + "    " + customers[i].getId());
                                 flag = false;
                                 break;
                             }
