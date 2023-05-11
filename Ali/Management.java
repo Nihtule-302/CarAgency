@@ -159,12 +159,15 @@ public class Management {
                         }
                     case 3:
                         System.out.print("Name | ID ");
-                        for (int i = 0; i < customers.length; i++) {
-                            if (customers[i] != null)
-                                System.out.println(customers[i].getName() + " " + customers[i].getId());
-                            flag = false;
-                            break;
-                        }
+                        if (customers.length > 0) {
+                            for (int i = 0; i < customers.length; i++) {
+                                if (customers[i] != null)
+                                    System.out.println(customers[i].getName() + " " + customers[i].getId());
+                                flag = false;
+                                break;
+                            }
+                        }else 
+                            System.out.println("No Customers");
                     case 4:
                         System.out.println("\n++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
                         System.out.println("               (Root)                ");
