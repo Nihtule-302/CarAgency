@@ -7,11 +7,11 @@ import java.util.Scanner;
 
 public class Talk {
     private Admin manager = new Admin();
-    Scanner input = new Scanner(System.in)
+    Scanner input = new Scanner(System.in);
     private String decision;
     private String paymentType;
 
-    public string howCanIHelp(){ 
+    public String howCanIHelp(){
         try{
             System.out.println("Buy or rent?");
             decision = input.next();
