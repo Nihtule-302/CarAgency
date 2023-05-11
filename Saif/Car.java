@@ -15,10 +15,11 @@ public class Car extends Identification {
         this.price = price;
         this.rent = rent;
         idCounter++;
+        manager.addCar(model, price, rent);
     }
 
     // Getter for Price
-    public static double getPrice() {
+    public double getPrice() {
         return price;
     }
 

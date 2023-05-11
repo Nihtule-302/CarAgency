@@ -2,16 +2,19 @@ package Saif;
 
 import Peter.Admin;
 import Saif.Identification;
+import Ali.Transaction;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Talk {
+    private Customer cust = new Customer();
+    private Car op = new Car();
     private Admin manager = new Admin();
-    Scanner input = new Scanner(System.in)
+    Scanner input = new Scanner(System.in);
     private String decision;
     private String paymentType;
 
-    public string howCanIHelp(){ 
+    public void howCanIHelp(){ 
         try{
             System.out.println("Buy or rent?");
             decision = input.next();
@@ -25,8 +28,7 @@ public class Talk {
                 System.out.println("Cash or installments?");
                 paymentType = input.next();
                 if(paymentType.equals("cash") || paymentType.equals("installments"))
-                paymentType = this.paymentType;
-                decision = this.decision;
+                Transaction.buy(Car car, paymentType)
             } else if(decision.equals("rent")){
                 paymentType = "cash";
                 decision = this.decision;
@@ -38,10 +40,10 @@ public class Talk {
     }
 
     public void thatWillBe(String decision){
-        System.out.println("Customer: " + Customer.getName());
-        System.out.println("Model: " + Car.getName());
+        System.out.println("Customer: " + cust.getName());
+        System.out.println("Model: " + op.getName());
         System.out.println("Operation: " + decision);
         System.out.println("Payment type: " + paymentType);
-        System.out.println("Price: " + Car.getPrice());
+        System.out.println("Price: " + op.getPrice());
     }
 }
