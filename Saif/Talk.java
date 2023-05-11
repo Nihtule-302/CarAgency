@@ -1,4 +1,4 @@
-package Saif;
+/*package Saif;
 
 import Peter.Admin;
 import Saif.Identification;
@@ -46,4 +46,4 @@ public class Talk {
         System.out.println("Payment type: " + paymentType);
         System.out.println("Price: " + op.getPrice());
     }
-}
+}*/
