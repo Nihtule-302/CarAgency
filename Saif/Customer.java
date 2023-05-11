@@ -12,7 +12,6 @@ public class Customer extends Identification {
         super(name);
         idCounter++;
         setId(idCounter);
-        manager.addCustomer(this);
     }
 
 
