@@ -109,7 +109,7 @@ public class Admin {
             }
         }
     }
-    public Car getCar(String model) {
+    public Car getCar(String model) throws IllegalArgumentException {
         for (Car car : cars) {
             if (car != null && car.getName().equals(model)) {
                 return car;
@@ -117,7 +117,7 @@ public class Admin {
         }
         return null;
     }
-    public Car getCar(int id) {
+    public Car getCar(int id)throws IllegalArgumentException {
         for (Car car : cars) {
             if (car != null && car.getId() == id) {
                 return car;
@@ -137,7 +137,7 @@ public class Admin {
         return null;
     }
 
-    public Employee getEmployee(int id) {
+    public Employee getEmployee(int id) throws IllegalArgumentException{
         for (Employee employee : employees) {
             if (employee != null && employee.getId() == id) {
                 return employee;
@@ -149,7 +149,7 @@ public class Admin {
     public Employee[] getEmployees() {
         return employees;
     }
-    public Customer getCustomer(String name) {
+    public Customer getCustomer(String name) throws IllegalArgumentException{
         for (Customer customer : customers) {
             if (customer != null && customer.getName().equals(name)) {
                 return customer;
@@ -158,7 +158,7 @@ public class Admin {
         return null;
     }
 
-    public Customer getCustomer(int id) {
+    public Customer getCustomer(int id)throws IllegalArgumentException {
         for (Customer customer : customers) {
             if (customer != null && customer.getId() == id) {
                 return customer;
