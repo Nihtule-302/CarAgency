@@ -14,7 +14,7 @@ public class Transaction {
     private Customer customer;
     private Car car;
     private String paymentType;
-    private Admin manager = new Admin();
+    private static Admin manager = new Admin();
 
     public void setEmployeeAndCustomer(Employee employee, Customer customer) {
         this.employee = employee;

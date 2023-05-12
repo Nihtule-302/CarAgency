@@ -1,4 +1,4 @@
-package Saif;
+/*package Saif;
 
 import Peter.Admin;
 import Saif.Identification;
@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Talk {
     private Customer cust = new Customer();
     private Car op = new Car();
-    private Admin manager = new Admin();
+    private static Admin manager = new Admin();
     Scanner input = new Scanner(System.in);
     private String decision;
     private String paymentType;
@@ -46,4 +46,4 @@ public class Talk {
         System.out.println("Payment type: " + paymentType);
         System.out.println("Price: " + op.getPrice());
     }
-}
+}*/

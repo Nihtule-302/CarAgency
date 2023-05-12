@@ -8,7 +8,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Management {
-    private Admin manager = new Admin();
+    private static Admin manager = new Admin();
 
     Scanner input = new Scanner(System.in);
 
@@ -158,13 +158,16 @@ public class Management {
                             break;
                         }
                     case 3:
-                        System.out.print("Name | ID ");
-                        for (int i = 0; i < customers.length; i++) {
-                            if (customers[i] != null)
-                                System.out.println(customers[i].getName() + " " + customers[i].getId());
-                            flag = false;
-                            break;
-                        }
+                        System.out.println("Name | ID ");
+                        if (customers.length > 0) {
+                            for (int i = 0; i < customers.length; i++) {
+                                if (customers[i] != null)
+                                    System.out.println(customers[i].getName() + "    " + customers[i].getId());
+                                flag = false;
+                                break;
+                            }
+                        }else 
+                            System.out.println("No Customers");
                     case 4:
                         System.out.println("\n++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
                         System.out.println("               (Root)                ");
