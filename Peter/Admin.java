@@ -26,27 +26,20 @@ public class Admin {
         return cars;
     }
 
-    private void resizeEmployee() {
+    private void resizeArray(Object[] array) {
         int increaseBy = 5;
-        Employee[] temp = new Employee[employees.length + increaseBy];
-        System.arraycopy(employees, 0, temp, 0, employees.length);
-        employees = temp;
+        Object[] temp = new Object[array.length + increaseBy];
+        System.arraycopy(array, 0, temp, 0, array.length);
+        array = temp;
+        if (array instanceof Employee[]) {
+            employees = (Employee[]) array;
+        } else if (array instanceof Customer[]) {
+            customers = (Customer[]) array;
+        } else if (array instanceof Car[]) {
+            cars = (Car[]) array;
+        }
     }
 
-
-    private void resizeCustomer() {
-        int increaseBy = 5;
-        Customer[] temp = new Customer[customers.length + increaseBy];
-        System.arraycopy(customers, 0, temp, 0, customers.length);
-        customers = temp;
-    }
-
-    private void resizeCar() {
-        int increaseBy = 5;
-        Car[] temp = new Car[cars.length + increaseBy];
-        System.arraycopy(cars, 0, temp, 0, cars.length);
-        cars = temp;
-    }
     private int findAvailableIndex(Object[] arr) {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == null) {
@@ -55,11 +48,11 @@ public class Admin {
         }
 
         if (arr instanceof Employee[]) {
-            resizeEmployee();
+            resizeArray();
         } else if (arr instanceof Car[]) {
-            resizeCar();
+            resizeArray();
         } else if (arr instanceof Customer[]) {
-            resizeCustomer();
+            resizeArray();
         }
 
         return findAvailableIndex(arr);
