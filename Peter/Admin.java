@@ -6,12 +6,12 @@ import Saif.Car;
 import Saif.Customer;
 
 public class Admin {
-    private Employee[] employees = defaultEmployees();
-    private Customer[] customers = new Customer[3];
-    private Car[] cars = defaultCars();
-    private Transaction transaction = new Transaction();
+    private static Employee[] employees = defaultEmployees();
+    private static Customer[] customers = new Customer[3];
+    private static Car[] cars = defaultCars();
+    
 
-    private Employee[] defaultEmployees() {
+    private static Employee[] defaultEmployees() {
         Employee[] employees = new Employee[3];
         employees[0] = new Employee("Thorfinn");
         employees[1] = new Employee("Musashi");
@@ -19,7 +19,7 @@ public class Admin {
         return employees;
     }
 
-    private Car[] defaultCars() {
+    private static Car[] defaultCars() {
         Car[] cars = new Car[2];
         cars[0] = new Car("BMW", 1232000, 1755);
         cars[1] = new Car("MERCEDES", 1848000, 2156);
@@ -168,12 +168,6 @@ public class Admin {
     public Customer[] getCustomers() {
         return customers;
     }
-
-
-
-
-
-
 
 }
 
