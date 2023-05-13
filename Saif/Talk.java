@@ -1,7 +1,8 @@
-/*package Saif;
+package Saif;
 
 import Peter.Admin;
 import Saif.Identification;
+import Ali.Employee;
 import Ali.Transaction;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -13,8 +14,15 @@ public class Talk {
     Scanner input = new Scanner(System.in);
     private String decision;
     private String paymentType;
+    private Employee Employee = new Employee();
 
     public void howCanIHelp(){ 
+        public Employee getRandomEmployee() {
+            Employee[] employees = manager.getEmployees();
+            int randomIndex = (int) (Math.random() * employees.length);
+            return employees[randomIndex];
+        }
+
         try{
             System.out.println("Buy or rent?");
             decision = input.next();
@@ -46,4 +54,4 @@ public class Talk {
         System.out.println("Payment type: " + paymentType);
         System.out.println("Price: " + op.getPrice());
     }
-}*/
+}
