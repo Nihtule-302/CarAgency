@@ -37,13 +37,13 @@ public class Talk {
         System.out.println("Would you like to buy or  rent?");
         System.out.println("0: rent, 1: buy");
         boolean flag1 = true;
-        while(run)
+        while(flag1)
         try{
             choice = input.nextInt();
             if(choice != 0 && choice != 1){
                 System.out.println("Please try again. 0: rent, 1: buy");
             } else {
-                run = false;
+                flag1 = false;
             }
             
         }
