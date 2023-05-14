@@ -228,7 +228,7 @@ public class Management {
                             break;
                         }
                     case 4:
-                        System.out.print("Name | ID | Price | rent");
+                        System.out.println("Name | ID | Price | rent");
                         for (int i = 0; i < cars.length; i++) {
                             if (cars[i] != null)
                                 System.out.println(cars[i].getName() + " " + cars[i].getId() +
@@ -258,9 +258,7 @@ public class Management {
                 int choice = input.nextInt();
                 switch (choice) {
                     case 1:
-                        System.out.println("ConfirmedIncome: " + transaction.getConfirmedIncome());
-                        System.out.println("AnticipatedIncome: " + transaction.getAnticipatedIncome());
-                        System.out.println("TotalIncome: " + transaction.getTotalIncome());
+                        System.out.println("Income: " + transaction.getIncome());
                         flag = false;
                         break;
                     case 2:

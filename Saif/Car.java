@@ -1,7 +1,7 @@
 package Saif;
 
 public class Car extends Identification {
-    private static int idCounter = 0;
+    private static int idCounter = 1000;
     private double price;
     private double rent;
 

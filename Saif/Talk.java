@@ -49,6 +49,7 @@ public class Talk {
         }
         catch(InputMismatchException ime) {
             System.out.println("Please enter a valid number");
+            input.nextInt();
         }
 
         switch(choice){
@@ -59,7 +60,7 @@ public class Talk {
         }
 
         System.out.println("Choose your car from the available list:");
-        System.out.print("Name | ID | Price | rent");
+        System.out.println("Name | ID | Price | rent");
         for (int i = 0; i < cars.length; i++) {
             if (cars[i] != null)
                 System.out.println(cars[i].getName() + " " + cars[i].getId() +
@@ -75,6 +76,7 @@ public class Talk {
             }
             catch(Exception e) {
                 System.out.println("Please enter a valid ID");
+                input.nextInt();
             }   
         }
 

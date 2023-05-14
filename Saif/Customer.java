@@ -1,7 +1,7 @@
 package Saif;
 
 public class Customer extends Identification {
-    private static int idCounter = 0;
+    private static int idCounter = 500;
 
     // No-arg constructor
     public Customer() {

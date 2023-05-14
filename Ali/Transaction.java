@@ -5,9 +5,7 @@ import Saif.Car;
 import Saif.Customer;
 
 public class Transaction {
-    private static double confirmedIncome = 0;
-    private static double anticipatedIncome = 0;
-    private static double TotalIncome = confirmedIncome + anticipatedIncome;
+    private static double Income = 0;
     private static Transaction[] transactions = new Transaction[5];
 
     private Employee employee;
@@ -26,11 +24,7 @@ public class Transaction {
         this.car = car;
         employee.increasePayCheck(1000);
         manager.removeCar(car.getName());
-        if (cashOrInstallments.equals("Cash"))
-            confirmedIncome += car.getPrice();
-        else if (cashOrInstallments.equals("Installments"))
-            confirmedIncome += car.getPrice()/12;
-            anticipatedIncome += (double) (11/12)* car.getPrice();
+        Income += car.getPrice();
     }
 
     public void rent(Car car){
@@ -38,7 +32,7 @@ public class Transaction {
         this.car = car;
         employee.increasePayCheck(100);
         manager.removeCar(car.getName());
-        confirmedIncome += car.getRent();
+        Income += car.getRent();
     }
 
     public void saveTransaction(){
@@ -67,16 +61,8 @@ public class Transaction {
         setTransactions(temp);
     }
 
-    public double getConfirmedIncome() {
-        return confirmedIncome;
-    }
-
-    public double getAnticipatedIncome() {
-        return anticipatedIncome;
-    }
-
-    public double getTotalIncome() {
-        return TotalIncome;
+    public double getIncome() {
+        return Income;
     }
 
     public Transaction[] getTransactions() {
