@@ -11,10 +11,13 @@ public class Car extends Identification {
 
     // Constructor with model, price, and rent parameters
     public Car(String model, double price, double rent) {
-        super(model);
-        this.price = price;
-        this.rent = rent;
-        idCounter++;
+        if(idCounter>=1000 && idCounter<=1499){
+            setName(model);
+            this.price = price;
+            this.rent = rent;
+            idCounter++;
+            setId(idCounter);    
+        }
     }
 
     // Getter for Price

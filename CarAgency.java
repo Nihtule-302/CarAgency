@@ -1,5 +1,6 @@
 import Ali.Management;
 //import Saif.Talk;
+import Saif.Talk;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -23,8 +24,10 @@ public class CarAgency {
                             management.start();
                             break;
                         } else if (choice == 1){
-                            //Talk talk = new Talk();
                             //use the Talk class
+                            Talk talk = new Talk();
+                            talk.greetings();
+                            talk.howCanIHelp();
                         }
                         else
                             System.out.println("Thank you for Visiting The ASP Car Agency \nBye");

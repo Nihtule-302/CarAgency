@@ -21,8 +21,8 @@ public class Transaction {
         this.customer = customer;
     }
 
-    public void buy(Car car, String cashOrInstallments){
-        this.paymentType = cashOrInstallments;
+    public void buy(Car car){
+        this.paymentType = "cash";
         this.car = car;
         employee.increasePayCheck(1000);
         manager.removeCar(car.getName());

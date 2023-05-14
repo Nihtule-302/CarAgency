@@ -9,9 +9,11 @@ public class Customer extends Identification {
 
     // Constructor with name parameter
     public Customer(String name) {
-        super(name);
-        idCounter++;
-        setId(idCounter);
+        if(idCounter>=500 && idCounter<=999){
+            setName(name);
+            idCounter++;
+            setId(idCounter);
+        }   
     }
 
 

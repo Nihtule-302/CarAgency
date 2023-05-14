@@ -10,9 +10,11 @@ public class Employee extends Identification {
     public Employee(){
     }
     public Employee(String name){
-        idCounter++;
-        setName(name);
-        setId(idCounter);
+        if(idCounter>=0 && idCounter<=499){
+            setName(name);
+            idCounter++;
+            setId(idCounter);
+        }   
     }
 
     public void increasePayCheck(double money){
