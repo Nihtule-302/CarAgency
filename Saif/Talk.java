@@ -10,9 +10,9 @@ import java.util.Scanner;
 public class Talk {
     private Customer customer;
     private Car car;
+    private static Admin manager = new Admin();
     private static Car[] cars = manager.getCars();
     private static Transaction transaction = new Transaction();
-    private static Admin manager = new Admin();
     Scanner input = new Scanner(System.in);
     private Employee employee;
     int choice;
