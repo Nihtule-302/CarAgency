@@ -55,7 +55,7 @@ public class Talk {
             case 0: paymentType = "rent";
                 break;
             case 1: paymentType = "buy";
-                break
+                break;
         }
 
         System.out.println("Choose your car from the available list:");

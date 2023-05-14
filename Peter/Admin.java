@@ -27,16 +27,21 @@ public class Admin {
     }
 
     private void resizeArray(Object[] array) {
-        int increaseBy = 5;
-        Object[] temp = new Object[array.length + increaseBy];
-        System.arraycopy(array, 0, temp, 0, array.length);
-        array = temp;
+        
+        
         if (array instanceof Employee[]) {
-            employees = (Employee[]) array;
+            Employee[] temp = new Employee[array.length + 1];
+        System.arraycopy(array, 0, temp, 0, array.length);
+       employees = temp;
+            
         } else if (array instanceof Customer[]) {
-            customers = (Customer[]) array;
+            Customer[] temp = new Customer[array.length + 1];
+            System.arraycopy(array, 0, temp, 0, array.length);
+            customers = temp;
         } else if (array instanceof Car[]) {
-            cars = (Car[]) array;
+            Car[] temp = new Car[array.length + 1];
+            System.arraycopy(array, 0, temp, 0, array.length);
+            cars = temp;
         }
     }
 
@@ -48,14 +53,18 @@ public class Admin {
         }
 
         if (arr instanceof Employee[]) {
-            resizeArray();
+            resizeArray(employees);
+            return employees.length -1;
+
         } else if (arr instanceof Car[]) {
-            resizeArray();
+            resizeArray(cars);
+            return cars.length -1;
         } else if (arr instanceof Customer[]) {
-            resizeArray();
+            resizeArray(customers);
+            return customers.length -1;
         }
 
-        return findAvailableIndex(arr);
+        return 0 ;
     }
     public void addEmployee(String name) {
         Employee newEmployee = new Employee(name);
