@@ -59,12 +59,12 @@ public class Talk {
                 break;
         }
 
-        System.out.println("Choose your car from the available list:");
+        System.out.println("Choose your car from the available list (ID):");
         System.out.println("Name | ID | Price | rent");
         for (int i = 0; i < cars.length; i++) {
             if (cars[i] != null)
-                System.out.println(cars[i].getName() + " " + cars[i].getId() +
-                 " " + cars[i].getPrice() + " " + cars[i].getRent() + " ");
+                System.out.println(cars[i].getName() + " | " + cars[i].getId() +
+                 " | " + cars[i].getPrice() + " | " + cars[i].getRent() + " | ");
             }
 
         boolean flag2 = true;

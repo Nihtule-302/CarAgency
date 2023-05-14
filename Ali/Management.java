@@ -104,12 +104,12 @@ public class Management {
                         System.out.print("Name| ");
                         for (int i = 0; i < employees.length; i++) {
                             if (employees[i] != null)
-                                System.out.print(employees[i].getName() + " ");
+                                System.out.print(employees[i].getName() + " | ");
                         }
                         System.out.print("\nID| ");
                         for (int i = 0; i < employees.length; i++) {
                             if (employees[i] != null)
-                                System.out.print(employees[i].getId() + " ");
+                                System.out.print(employees[i].getId() + " | ");
                         }
                         flag = false;
                         break;
