@@ -162,7 +162,7 @@ public class Management {
                         if (customers.length > 0) {
                             for (int i = 0; i < customers.length; i++) {
                                 if (customers[i] != null)
-                                    System.out.println(customers[i].getName() + "    " + customers[i].getId());
+                                    System.out.println(customers[i].getName() + "  |  " + customers[i].getId());
                                 flag = false;
                                 break;
                             }
@@ -231,8 +231,8 @@ public class Management {
                         System.out.println("Name | ID | Price | rent");
                         for (int i = 0; i < cars.length; i++) {
                             if (cars[i] != null)
-                                System.out.println(cars[i].getName() + " " + cars[i].getId() +
-                                                 " " + cars[i].getPrice() + " " + cars[i].getRent() + " ");
+                                System.out.println(cars[i].getName() + " | " + cars[i].getId() +
+                                                 " | " + cars[i].getPrice() + " | " + cars[i].getRent() + " | ");
                         }
                         flag = false;
                         break;
