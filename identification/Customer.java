@@ -1,4 +1,4 @@
-package Saif;
+package identification;
 
 public class Customer extends Identification {
     private static int idCounter = 500;

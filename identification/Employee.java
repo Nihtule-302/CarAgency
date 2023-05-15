@@ -1,7 +1,4 @@
-package Ali;
-
-import Peter.Admin;
-import Saif.Identification;
+package identification;
 
 public class Employee extends Identification {
     private static int idCounter = 0;

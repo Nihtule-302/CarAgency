@@ -1,6 +1,6 @@
-import Ali.Management;
-//import Saif.Talk;
-import Saif.Talk;
+import utility.Management;
+//import Peter.Talk;
+import utility.Talk;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -9,10 +9,10 @@ public class CarAgency {
     public static void main(String[] args){
         System.out.println("             ASP Car Agency             ");
         System.out.println("------------------------------------");
+        Scanner input = new Scanner(System.in);
         while (true) {
-            Scanner input = new Scanner(System.in);
-            System.out.println("Hello! Welcome to The ASP Car Agency ");
-            System.out.println("\nAre you an Admin or a Customer?");
+            System.out.println("Hello! Welcome to The ASP Car Agency\n ");
+            System.out.print("Are you an Admin or a Customer?\n");
             System.out.print("(0 -> Admin), (1 -> Customer), (2 -> Exit): ");
             try {
                 while (true) {
@@ -37,11 +37,12 @@ public class CarAgency {
                         System.exit(0);
                     }
                     else
-                        System.out.println("Try again. Enter (0 -> Admin), (1 -> Customer), (2 -> Exit): ");
-                    input.nextInt();
+                        System.out.print("Try again.\nEnter (0 -> Admin), (1 -> Customer), (2 -> Exit): ");
                 }
             }catch (InputMismatchException ime){
-                System.out.print("Enter an integer, try again: ");
+                System.out.println("\nEnter an integer, try again:");
+                System.out.println("------------------------------------");
+                input.next();
             }
         }
     }

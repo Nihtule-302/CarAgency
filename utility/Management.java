@@ -1,8 +1,10 @@
-package Ali;
+package utility;
 
-import Peter.Admin;
-import Saif.Car;
-import Saif.Customer;
+import agencysystem.Transaction;
+import agencysystem.Admin;
+import identification.Car;
+import identification.Customer;
+import identification.Employee;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -20,8 +22,8 @@ public class Management {
                 chooseEmployeeCustomerCarOrTransactionManagement();
                 return;
             } catch (InputMismatchException ime) {
-                System.out.print("Enter an integer, try again");
-                input.nextInt();
+                System.out.print("Enter an integer, try again\n");
+                input.next();
             }
         }
 
@@ -30,7 +32,7 @@ public class Management {
     private void chooseEmployeeCustomerCarOrTransactionManagement() throws InputMismatchException {
         while (true) {
             try {
-                System.out.println("|(1)Employee | (2)Customer | (3)Car | (4)TransactionManagement | (5)Exit |\n");
+                System.out.println("\n|(1)Employee | (2)Customer | (3)Car | (4)TransactionManagement | (5)Exit |\n");
                 System.out.print("Choose the number corresponding to the part of the system to access: ");
                 int choice = input.nextInt();
                 switch (choice) {
@@ -96,7 +98,7 @@ public class Management {
                             System.out.println("paycheck: " + employee.getPayCheck());
                             flag = false;
                             break;
-                        }catch (IllegalArgumentException iae){
+                        }catch (Exception e){
                             System.out.println("Employee not found");
                             flag = false;
                             break;
@@ -158,8 +160,9 @@ public class Management {
                             System.out.println("ID: " + customer.getId());
                             flag = false;
                             break;
-                        }catch (IllegalArgumentException iae){
+                        }catch (Exception e){
                             System.out.println("Customer not found");
+                            input.next();
                             flag = false;
                             break;
                         }
@@ -228,8 +231,9 @@ public class Management {
                             System.out.println("rent: " + car.getRent());
                             flag = false;
                             break;
-                        }catch (IllegalArgumentException iae){
+                        }catch (Exception e){
                             System.out.println("Car not found");
+                            input.next();
                             flag = false;
                             break;
                         }

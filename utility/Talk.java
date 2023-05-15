@@ -1,8 +1,11 @@
-package Saif;
+package utility;
 
-import Peter.Admin;
-import Ali.Employee;
-import Ali.Transaction;
+import agencysystem.Admin;
+import agencysystem.Transaction;
+import identification.Car;
+import identification.Customer;
+import identification.Employee;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -37,21 +40,20 @@ public class Talk {
         System.out.println("Would you like to buy or  rent?");
         System.out.println("0: rent, 1: buy");
         boolean flag1 = true;
-        while(flag1)
-        try{
-            choice = input.nextInt();
-            if(choice != 0 && choice != 1){
-                System.out.println("Please try again. 0: rent, 1: buy");
-            } else {
-                flag1 = false;
-            }
-            
-        }
-        catch(InputMismatchException ime) {
-            System.out.println("Please enter a valid number");
-            input.nextInt();
-        }
+        while(flag1) {
+            try {
+                choice = input.nextInt();
+                if (choice != 0 && choice != 1) {
+                    System.out.println("Please try again. 0: rent, 1: buy");
+                } else {
+                    flag1 = false;
+                }
 
+            } catch (InputMismatchException ime) {
+                System.out.println("Please enter a valid number");
+                input.nextInt();
+            }
+        }
         switch(choice){
             case 0: paymentType = "rent";
                 break;
@@ -76,7 +78,7 @@ public class Talk {
             }
             catch(Exception e) {
                 System.out.println("Please enter a valid ID");
-                input.nextInt();
+                input.next();
             }   
         }
 
@@ -98,10 +100,10 @@ public class Talk {
      
     private void thatWillBe(Employee employee, Customer customer, Car car, String paymentType){
         System.out.println("Thank you, " + customer.getName());
-        if(paymentType == "buy")
-        System.out.println("Your total will be: " + car.getPrice());
-        if(paymentType == "rent")
-        System.out.println("Your total will be: " + car.getRent());
+        if(paymentType.equals("buy"))
+            System.out.println("Your total will be: " + car.getPrice());
+        if(paymentType.equals("rent"))
+            System.out.println("Your total will be: " + car.getRent());
     }
 
 }
