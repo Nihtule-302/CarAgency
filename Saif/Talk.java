@@ -1,7 +1,6 @@
 package Saif;
 
 import Peter.Admin;
-import Saif.Identification;
 import Ali.Employee;
 import Ali.Transaction;
 import java.util.InputMismatchException;
@@ -15,8 +14,8 @@ public class Talk {
     private static Transaction transaction = new Transaction();
     Scanner input = new Scanner(System.in);
     private Employee employee;
-    int choice;
-    String paymentType;
+    private int choice;
+    private String paymentType;
 
     private  Employee getRandomEmployee() {
         Employee[] employees = manager.getEmployees();

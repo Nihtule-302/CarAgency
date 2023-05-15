@@ -274,10 +274,10 @@ public class Management {
                             if(allTransactions[i] != null){
                             if (allTransactions[i].getPaymentType().equals("cash") ){
                                 System.out.println(allTransactions[i].getEmployeeName() + " | " + allTransactions[i].getCustomerName() +
-                                                 " | " + allTransactions[i].getCarModel() + " | " + allTransactions[i].getPrice() + " | ");
+                                                 " | " + allTransactions[i].getPaymentType() + " | " + allTransactions[i].getCarModel() + " | " + allTransactions[i].getPrice() + " | ");
                             } else if (allTransactions[i].getPaymentType().equals("rent")){
                                 System.out.println(allTransactions[i].getEmployeeName() + " | " + allTransactions[i].getCustomerName() +
-                                                 " | " + allTransactions[i].getCarModel() + " | " + allTransactions[i].getPrice() + " | ");
+                                                 " | " + allTransactions[i].getPaymentType() + " | "  + allTransactions[i].getCarModel() + " | " + allTransactions[i].getPrice() + " | ");
                             }
                         }
                     }

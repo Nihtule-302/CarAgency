@@ -41,7 +41,7 @@ public class Transaction {
     public void saveTransaction(){
         Transaction[] transactions = getTransactions();
         int availableIndex = findAvailableIndex();
-        System.out.println("Employee" + this.employee + "customer " + this.customer + "car " + this.car + "payment type" + paymentType + "Price " + price);
+        //System.out.println("Employee" + this.employee + "customer " + this.customer + "car " + this.car + "payment type" + paymentType + "Price " + price);
         transactions[availableIndex] = this;
     }
 
