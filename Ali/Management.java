@@ -271,6 +271,7 @@ public class Management {
                         Transaction[] allTransactions = new Transaction().getTransactions();
                         System.out.println("Employee | Customer | Operation | Car | Price |");
                         for (int i = 0; i < allTransactions.length; i++) {
+                            if(allTransactions[i] != null){
                             if (allTransactions[i].getPaymentType().equals("cash") ){
                                 System.out.println(allTransactions[i].getEmployeeName() + " | " + allTransactions[i].getCustomerName() +
                                                  " | " + allTransactions[i].getCarModel() + " | " + allTransactions[i].getPrice() + " | ");
@@ -278,8 +279,8 @@ public class Management {
                                 System.out.println(allTransactions[i].getEmployeeName() + " | " + allTransactions[i].getCustomerName() +
                                                  " | " + allTransactions[i].getCarModel() + " | " + allTransactions[i].getPrice() + " | ");
                             }
-                            
                         }
+                    }
                         flag = false;
                         break;
                     case 3:
