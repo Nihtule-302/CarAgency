@@ -28,6 +28,9 @@ public class CarAgency {
                             Talk talk = new Talk();
                             talk.greetings();
                             talk.howCanIHelp();
+                            System.out.println("Thank you for Visiting The ASP Car Agency \nBye");
+                            System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
+                            break;
                         }
                         else
                             System.out.println("Thank you for Visiting The ASP Car Agency \nBye");

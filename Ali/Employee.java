@@ -5,7 +5,7 @@ import Saif.Identification;
 
 public class Employee extends Identification {
     private static int idCounter = 0;
-    private double payCheck = 1000;
+    private double payCheck = 10000;
 
     public Employee(){
     }
@@ -19,5 +19,8 @@ public class Employee extends Identification {
 
     public void increasePayCheck(double money){
         this.payCheck += money;
+    }
+    public double getPayCheck() {
+        return payCheck;
     }
 }

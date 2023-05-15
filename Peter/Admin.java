@@ -79,6 +79,12 @@ public class Admin {
         customers[index] = newCustomer;
     }
 
+    public void addCustomer(Customer customer) {
+        int index = findAvailableIndex(customers);
+
+        customers[index] = customer;
+    }
+
     public void addCar(String model, double price, double rent) {
         Car newCar = new Car(model, price, rent);
         int index = findAvailableIndex(cars);

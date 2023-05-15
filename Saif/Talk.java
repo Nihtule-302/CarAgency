@@ -30,6 +30,7 @@ public class Talk {
         System.out.println("Please enter your name: ");
         String name = input.next();
         customer = new Customer(name);
+        manager.addCustomer(customer);
         transaction.setEmployeeAndCustomer(employee, customer);
     }
 

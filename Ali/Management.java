@@ -93,6 +93,7 @@ public class Management {
                             employee = manager.getEmployee(employeeName);
                             System.out.println("Name: " + employee.getName());
                             System.out.println("ID: " + employee.getId());
+                            System.out.println("paycheck: " + employee.getPayCheck());
                             flag = false;
                             break;
                         }catch (IllegalArgumentException iae){
@@ -101,15 +102,20 @@ public class Management {
                             break;
                         }
                     case 4:
-                        System.out.print("Name| ");
+                        System.out.print("Name    | ");
                         for (int i = 0; i < employees.length; i++) {
                             if (employees[i] != null)
                                 System.out.print(employees[i].getName() + " | ");
                         }
-                        System.out.print("\nID| ");
+                        System.out.print("\nID      | ");
                         for (int i = 0; i < employees.length; i++) {
                             if (employees[i] != null)
-                                System.out.print(employees[i].getId() + " | ");
+                                System.out.print(employees[i].getId() + "   |   ");
+                        }
+                        System.out.print("\nPaycheck| ");
+                        for (int i = 0; i < employees.length; i++) {
+                            if (employees[i] != null)
+                                System.out.print(employees[i].getPayCheck() + " | ");
                         }
                         flag = false;
                         break;
@@ -262,7 +268,18 @@ public class Management {
                         flag = false;
                         break;
                     case 2:
-                        System.out.print("Fired\n");
+                        Transaction[] allTransactions = new Transaction().getTransactions();
+                        System.out.println("Employee | Customer | Operation | Car | Price |");
+                        for (int i = 0; i < allTransactions.length; i++) {
+                            if (allTransactions[i].getPaymentType().equals("cash") ){
+                                System.out.println(allTransactions[i].getEmployeeName() + " | " + allTransactions[i].getCustomerName() +
+                                                 " | " + allTransactions[i].getCarModel() + " | " + allTransactions[i].getPrice() + " | ");
+                            } else if (allTransactions[i].getPaymentType().equals("rent")){
+                                System.out.println(allTransactions[i].getEmployeeName() + " | " + allTransactions[i].getCustomerName() +
+                                                 " | " + allTransactions[i].getCarModel() + " | " + allTransactions[i].getPrice() + " | ");
+                            }
+                            
+                        }
                         flag = false;
                         break;
                     case 3:
